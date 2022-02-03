@@ -29,7 +29,7 @@
      app.listen()
      .then(() => {
       console.log("Hit this code! Wooo!")
-      app.on("meeting:roleChanged", (event) => {
+      app.on("meeting.roleChanged", (event) => {
         handleShareStateChange(event);
       })
      }).catch((err)=>{
