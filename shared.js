@@ -2,15 +2,15 @@
 
  function handleShareStateChange(event) {
     console.log("Start of handleShareStateChange")
-    let appSharing = event.isSharing
+    // let appSharing = event.isSharing
 
-    // and give it some content
-    let message = "";
-    if (appSharing) {
-        message = "Hello Everyone I am Sharing"
-    } else {
-        message = "Hello Everyone I am not Sharing :-("
-    }
+    // // and give it some content
+    // let message = "";
+    // if (appSharing) {
+    //     message = "Hello Everyone I am Sharing"
+    // } else {
+    //     message = "Hello Everyone I am not Sharing :-("
+    // }
   
     // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById("div1").textContent = message;
@@ -29,7 +29,7 @@
      app.listen()
      .then(() => {
       console.log("Hit this code! Wooo!")
-      app.on("application:shareStateChanged", (event) => {
+      app.on("meeting:roleChanged", (event) => {
         handleShareStateChange(event);
       })
      }).catch((err)=>{
