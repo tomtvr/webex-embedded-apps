@@ -1,8 +1,8 @@
  var app = new window.Webex.Application();
 
  function handleShareStateChange(event) {
+    console.log("Start of handleShareStateChange")
     let appSharing = event.isSharing
-    const newDiv = document.createElement("div");
 
     // and give it some content
     let message = "";
@@ -11,14 +11,9 @@
     } else {
         message = "Hello Everyone I am not Sharing :-("
     }
-    const newContent = document.createTextNode(message);
-  
-    // add the text node to the newly created div
-    newDiv.appendChild(newContent);
   
     // add the newly created element and its content into the DOM
-    const currentDiv = document.getElementById("div1");
-    document.body.insertBefore(newDiv, currentDiv);
+    const currentDiv = document.getElementById("div1").textContent = message;
  }
 
  // Wait for onReady promise, handle error scenario
