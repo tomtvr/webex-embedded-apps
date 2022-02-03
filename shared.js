@@ -1,19 +1,15 @@
  var app = new window.Webex.Application();
 
- function handleShareStateChange(event) {
-    console.log("Start of handleShareStateChange")
-    // let appSharing = event.isSharing
-
-    // // and give it some content
-    // let message = "";
-    // if (appSharing) {
-    //     message = "Hello Everyone I am Sharing"
-    // } else {
-    //     message = "Hello Everyone I am not Sharing :-("
-    // }
-  
+ function handleDisplayContextChange(event) {
+    console.log("Start of handleDisplayContextChange")  
     // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById("div1").textContent = "TEST";
+ }
+
+ function handleInfoChange(event) {
+    console.log("Start of handleInfoChange")  
+    // add the newly created element and its content into the DOM
+    const currentDiv = document.getElementById("div1").textContent = "BOB";
  }
 
  // Wait for onReady promise, handle error scenario
@@ -30,7 +26,10 @@
      .then(() => {
       console.log("Hit this code! Wooo!")
       app.on("application:displayContextChanged", (event) => {
-        handleShareStateChange(event);
+        handleDisplayContextChange(event);
+      })
+      app.on("meeting:infoChanged", (event) => {
+        handleInfoChange(event);
       })
      }).catch((err)=>{
         console.log("Error in listen")
