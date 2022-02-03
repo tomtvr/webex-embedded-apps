@@ -37,7 +37,7 @@
       app.on("application:shareStateChanged", (event) => {
         handleShareStateChange(event);
       })
-     }).then((err)=>{
+     }).catch((err)=>{
         console.log("Error in listen")
         console.log(err);
      });
