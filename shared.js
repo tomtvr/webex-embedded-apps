@@ -4,6 +4,7 @@
     console.log("Start of handleDisplayContextChange")  
     // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById("div1").textContent = "TEST";
+    document.body.style.backgroundColor = "red"
  }
 
  function handleRoleChange(event) {
