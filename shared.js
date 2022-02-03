@@ -10,12 +10,17 @@
          log("Error", errorcode)
      })
 
-    app.listen()
-    .then(() => {
+     app.listen()
+     .then(() => {
+      console.log("Hit this code! Wooo!")
       app.on("application:shareStateChanged", (event) => {
         handleShareStateChange(event);
       })
-    });
+     }).then((err)=>{
+        console.log("Error in listen")
+        console.log(err);
+     });
+
  }).catch((errorcode) =>  {
      log("Error with code: ", Webex.Application.ErrorCodes[errorcode])
  });

@@ -11,7 +11,7 @@
  // Button click handler to set share URL
  function handleSetShare() {
      // Replace this with the URL of your shared page
-     var url = "https://www.example.com/shared.html"
+     var url = "https://ichack-demo.co.uk/shared"
      // "Shared App" is the title of the window or tab that will be created
      app.setShareUrl(url, "", "Shared App").then(() => {
          log("Set share URL", url);
