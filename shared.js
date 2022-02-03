@@ -6,8 +6,8 @@
     const currentDiv = document.getElementById("div1").textContent = "TEST";
  }
 
- function handleInfoChange(event) {
-    console.log("Start of handleInfoChange")  
+ function handleRoleChange(event) {
+    console.log("Start of handleRoleChange")  
     // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById("div1").textContent = "BOB";
  }
@@ -28,8 +28,8 @@
       app.on("application:displayContextChanged", (event) => {
         handleDisplayContextChange(event);
       })
-      app.on("meeting:infoChanged", (event) => {
-        handleInfoChange(event);
+      app.on("meeting:roleChanged", (event) => {
+        handleRoleChange(event);
       })
      }).catch((err)=>{
         console.log("Error in listen")
