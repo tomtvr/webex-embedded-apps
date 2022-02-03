@@ -13,7 +13,7 @@
     // }
   
     // add the newly created element and its content into the DOM
-    const currentDiv = document.getElementById("div1").textContent = message;
+    const currentDiv = document.getElementById("div1").textContent = "TEST";
  }
 
  // Wait for onReady promise, handle error scenario
@@ -29,7 +29,7 @@
      app.listen()
      .then(() => {
       console.log("Hit this code! Wooo!")
-      app.on("meeting.roleChanged", (event) => {
+      app.on("application:displayContextChanged", (event) => {
         handleShareStateChange(event);
       })
      }).catch((err)=>{
