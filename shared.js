@@ -15,18 +15,27 @@
 
  function greetUser(user){
     console.log("Greeting user: " + user.displayName)
-    const currentDiv = document.getElementById("div1").textContent = "Hello " + user.displayName + "!";
+    const currentDiv = document.getElementById("div1").textContent = "Hello, " + user.displayName + "!";
+    let img = document.createElement("img");
+    img.src = 'wave.jpg'
+    document.body.appendChild(p);
+    document.getElementById("div1").appendChild(img);
  }
 
  // Wait for onReady promise, handle error scenario
  app.onReady().then(() => {
-     log("Application ready. App", app);
+     //log("Application ready. App", app);
      // Display the ID of the current user
      app.context.getUser().then((user)=> {
          greetUser(user)
      }).catch((errorcode) => {
          log("Error", errorcode)
      })
+     app.context.getMeeting().then((m) => {
+        console.log('getMeeting()', m);
+      }).catch((error) => {
+        console.log('getMeeting() promise failed with error', Webex.Application.ErrorCodes[error]);
+      });
 
      app.listen()
      .then(() => {
