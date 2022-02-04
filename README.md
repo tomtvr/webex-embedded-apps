@@ -6,10 +6,10 @@ https://developer.webex.com/docs/embedded-apps-guide#developer-quick-start
 
 ## Getting started
 ### Things needed to get started
-To allow the web app to be accessed witin the embedded app framework it needs to be hosted using a publically accessible url using https. During the ICHack workshop an example url of ichack-demo.co.uk will be available to use.
+To allow the web app to be accessed within the embedded app framework it needs to be hosted using a publically accessible url using https. During the ICHack workshop an example url of **ichack-demo.co.uk** will be available to use.
 
 ### Step 1 
-Create an account on developer.webex.com and 
+Create an account on developer.webex.com 
 ![SignUp](images/readme/signup.png)
 
 ### Step 2
@@ -27,7 +27,7 @@ Add all the required information, including the start page url. The start page u
 Download and log into the Webex Desktop client on your device. https://www.webex.com/downloads.html
 
 ### Step 5
-Start a meeting using your personal room. This can be found from the meetings section of the teams client. Get a friend to join the meeting as well
+Start a meeting using your personal room. This can be found from the meetings section of the desktop client. Get a friend to join the meeting as well.
 
 ![Meetings](images/readme/meeting.png)
 
@@ -40,12 +40,12 @@ Click on Apps in the bottom right hand corner. Your app should appear as an opti
 Once the shared url is set, you can click on Open Together, which will then share the app with your friends in the meeting.
 
 ### Initiator App 
-The initiator app sets the shared url and opens the shared session
+The initiator app sets the shared url and opens the shared session.
 
 ![Apps](images/readme/initiator.png)
 
 ### Shared App
-The shared app is what all other participants in the meeting will see 
+The shared app is what all other participants in the meeting will see.
 ![Apps](images/readme/shared.png)
 
 ## Example Code
