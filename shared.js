@@ -16,7 +16,7 @@
     console.log("Start of handleRoleChange")
     // add the newly created element and its content into the DOM
     console.log("User Roles:" + event)
-    let check = event == "PRESENTER"
+    let check = JSON.stringify(event) == "PRESENTER"
     console.log("Check: " + check)
     let type = typeof(event)
     console.log("Type is: " + type)
