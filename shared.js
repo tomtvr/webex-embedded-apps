@@ -16,6 +16,10 @@
     console.log("Start of handleRoleChange")
     // add the newly created element and its content into the DOM
     console.log("User Roles:" + event)
+    let check = event === "PRESENTER"
+    console.log("Check: " + check)
+    let type = typeof(event)
+    console.log("Type is: " + type)
     if (event === "PRESENTER") {
         document.getElementById("div1").textContent = "You have got this! Your presentation will be amazing";
     } else {
