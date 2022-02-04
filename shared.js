@@ -12,27 +12,19 @@
     }
  }
 
- function handleRoleChange(event) {
-    console.log("Start of handleRoleChange")
-    // add the newly created element and its content into the DOM
-    console.log("User Roles:" + event)
-    let check = JSON.stringify(event) == "PRESENTER"
-    console.log("Check: " + check)
-    let type = typeof(event)
-    console.log("Type is: " + type)
-    if (event === "PRESENTER") {
-        document.getElementById("div1").textContent = "You have got this! Your presentation will be amazing";
-    } else {
-        document.getElementById("div1").textContent = ""
-    }
- }
-
  function displayRole(m){
      console.log("display role: " + m.userRoles);
      roles = m.userRoles;
      if (roles.includes("PRESENTER")){
         document.getElementById("role").textContent = "You have got this! Your presentation will be amazing";
-     }
+        linebreak = document.createElement("br");
+        let img = document.createElement("img");
+        img.src = './images/presenter.gif'
+        img.width = 150
+        document.getElementById("role").appendChild(linebreak);
+        document.getElementById("role").appendChild(img);
+    }
+
      if (roles.includes("PARTICIPANT")){
         document.getElementById("role").textContent = "You are a participant";
      }
@@ -43,7 +35,7 @@
     const currentDiv = document.getElementById("greeting").textContent = "Hello, " + name + "!\n";
     linebreak = document.createElement("br");
     let img = document.createElement("img");
-    img.src = './wave.gif'
+    img.src = './images/wave.gif'
     img.width = 150
     document.getElementById("greeting").appendChild(linebreak);
     document.getElementById("greeting").appendChild(img);
@@ -62,10 +54,10 @@
      linebreak = document.createElement("br");
      let img = document.createElement("img");
      if (theme === "DARK") {
-        img.src = './dark.jpg'
+        img.src = './images/dark.jpg'
      }
      else {
-        img.src = './light.jpg'
+        img.src = './images/light.jpg'
      }
      img.width = 150
      document.getElementById("theme").appendChild(linebreak);
@@ -97,9 +89,6 @@
       app.on("application:displayContextChanged", (event) => {
         handleDisplayContextChange(event);
       })
-      app.on("meeting:roleChanged", (event) => {
-        handleRoleChange(event);
-      })
       app.on("application:themeChanged", (theme) => {
         handleThemeChange(theme);
       })
@@ -111,6 +100,10 @@
  }).catch((errorcode) =>  {
      log("Error with code: ", Webex.Application.ErrorCodes[errorcode])
  });
+
+function showImage(src, div) {
+
+}
 
  function log(type, data) {
      let ul = document.getElementById("console");
