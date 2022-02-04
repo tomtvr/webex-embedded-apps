@@ -20,6 +20,7 @@
     console.log("Check: " + check)
     let type = typeof(event)
     console.log("Type is: " + type)
+    log("role change:", event)
     if (event === "PRESENTER") {
         document.getElementById("div1").textContent = "You have got this! Your presentation will be amazing";
     } else {
