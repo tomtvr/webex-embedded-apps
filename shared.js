@@ -23,9 +23,9 @@
     }
  }
 
- function greetUser(user){
-    console.log("Greeting user: " + user.displayName)
-    const currentDiv = document.getElementById("div1").textContent = "Hello, " + user.displayName + "!";
+ function greetUser(name){
+    console.log("Greeting user: " + name)
+    const currentDiv = document.getElementById("div1").textContent = "Hello, " + name + "!";
     let img = document.createElement("img");
     img.src = './wave.png'
     img.width = 50
@@ -37,7 +37,7 @@
      //log("Application ready. App", app);
      // Display the ID of the current user
      app.context.getUser().then((user)=> {
-         greetUser(user)
+         greetUser(user.displayName)
      }).catch((errorcode) => {
          log("Error", errorcode)
      })
@@ -47,19 +47,19 @@
         console.log('getMeeting() promise failed with error', Webex.Application.ErrorCodes[error]);
       });
 
-     app.listen()
-     .then(() => {
-      console.log("Hit this code! Wooo!")
-      app.on("application:displayContextChanged", (event) => {
-        handleDisplayContextChange(event);
-      })
-      app.on("meeting:roleChanged", (event) => {
-        handleRoleChange(event);
-      })
-     }).catch((err)=>{
-        console.log("Error in listen")
-        console.log(err);
-     });
+    //  app.listen()
+    //  .then(() => {
+    //   console.log("Hit this code! Wooo!")
+    //   app.on("application:displayContextChanged", (event) => {
+    //     handleDisplayContextChange(event);
+    //   })
+    //   app.on("meeting:roleChanged", (event) => {
+    //     handleRoleChange(event);
+    //   })
+    //  }).catch((err)=>{
+    //     console.log("Error in listen")
+    //     console.log(err);
+    //  });
 
  }).catch((errorcode) =>  {
      log("Error with code: ", Webex.Application.ErrorCodes[errorcode])
