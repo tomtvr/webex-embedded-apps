@@ -39,9 +39,9 @@
      log("Error with code: ", Webex.Application.ErrorCodes[errorcode])
  });
 
- function handleDisplayContextChange(event) {
+ function handleDisplayContextChange(displayContext) {
     // Print the event object to console
-    console.log("display context: ", event)
+    console.log("display context: ", displayContext)
 
     // Change background color when event is triggered
     if (document.body.style.backgroundColor != "red") {
@@ -54,11 +54,12 @@
  function handleThemeChange(theme){
     // Print the theme object to console
     console.log("current theme: " + theme)
-
-    const currentDiv = document.getElementById("theme").textContent = "Theme: " + theme;
+    
+    document.getElementById("theme").textContent = "Theme: " + theme;
 
     linebreak = document.createElement("br");
     let img = document.createElement("img");
+    
     if (theme === "DARK") {
        img.src = './images/dark.jpg'
     }
@@ -71,8 +72,11 @@
 }
 
  function displayRole(m){
+     // Print the current user roles to the console
      console.log("display role: " + m.userRoles);
      roles = m.userRoles;
+
+     // When presenting show a motivational quote in the app
      if (roles.includes("PRESENTER")){
         document.getElementById("role").textContent = "You have got this! Your presentation will be amazing";
         linebreak = document.createElement("br");
@@ -86,6 +90,8 @@
 
  function greetUser(name){
     console.log("Greeting user: " + name)
+    
+    // Greet user with text and picture
     const currentDiv = document.getElementById("greeting").textContent = "Hello, " + name + "!";
     linebreak = document.createElement("br");
     let img = document.createElement("img");
@@ -98,10 +104,6 @@
  function displayMeetingTitle(m){
      console.log("Title: "+ m.title)
      const currentDiv = document.getElementById("meeting").textContent = "You are in: " + m.title;
- }
-
- function show_image (src, alt, title) {
-     //function to create img element and append to div??
  }
 
  // Utility function to log app messages
