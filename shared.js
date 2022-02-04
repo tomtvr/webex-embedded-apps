@@ -25,11 +25,11 @@
 
  function greetUser(name){
     console.log("Greeting user: " + name)
-    const currentDiv = document.getElementById("div1").textContent = "Hello, " + name + "!";
+    const currentDiv = document.getElementById("greeting").textContent = "Hello, " + name + "!\n";
     let img = document.createElement("img");
-    img.src = './wave.png'
+    img.src = './wave.gif'
     img.width = 50
-    document.getElementById("div1").appendChild(img);
+    document.getElementById("greeting").appendChild(img);
  }
 
  // Wait for onReady promise, handle error scenario
