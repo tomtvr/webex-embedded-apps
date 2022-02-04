@@ -1,16 +1,25 @@
  var app = new window.Webex.Application();
 
  function handleDisplayContextChange(event) {
-    console.log("Start of handleDisplayContextChange")
+    console.log("Start of handleDisplayContextChange")  
     // add the newly created element and its content into the DOM
-    const currentDiv = document.getElementById("div1").textContent = "TEST";
-    document.body.style.backgroundColor = "red"
+    // const currentDiv = document.getElementById("div1").textContent = "TEST";
+    if (document.body.style.backgroundColor != "red") {
+        document.body.style.backgroundColor = "red" 
+    } else {
+        document.body.style.backgroundColor = "white" 
+    }
  }
 
  function handleRoleChange(event) {
-    console.log("Start of handleRoleChange")
-    // add the newly created element and its content into the DOM
-    const currentDiv = document.getElementById("div1").textContent = "BOB";
+    console.log("Start of handleRoleChange")  
+    // add the newly created element and its content into the DOM   
+    console.log("User Roles:" + event.userRoles)
+    if (event.userRoles === "PRESENTER") {
+        document.getElementById("div1").textContent = "You have got this! Your presentation will be amazing";
+    } else {
+        document.getElementById("div1").textContent = ""
+    }
  }
 
  function greetUser(user){
