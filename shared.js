@@ -1,7 +1,8 @@
  var app = new window.Webex.Application();
 
  function handleDisplayContextChange(event) {
-    console.log("Start of handleDisplayContextChange")  
+    console.log("Start of handleDisplayContextChange")
+    console.log("Display Context: " + event.displayContext)
     // add the newly created element and its content into the DOM
     // const currentDiv = document.getElementById("div1").textContent = "TEST";
     if (document.body.style.backgroundColor != "red") {
