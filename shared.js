@@ -1,8 +1,8 @@
  var app = new window.Webex.Application();
 
  function handleDisplayContextChange(event) {
-    console.log("Start of handleDisplayContextChange")
-    console.log("Display Context: " + event)
+    // print the event object to console
+    console.log("display context: ", event)
     // add the newly created element and its content into the DOM
     // const currentDiv = document.getElementById("div1").textContent = "TEST";
     if (document.body.style.backgroundColor != "red") {
@@ -24,10 +24,6 @@
         document.getElementById("role").appendChild(linebreak);
         document.getElementById("role").appendChild(img);
     }
-
-     if (roles.includes("PARTICIPANT")){
-        document.getElementById("role").textContent = "You are a participant";
-     }
  }
 
  function greetUser(name){
@@ -81,7 +77,7 @@
         console.log('getMeeting() promise failed with error', Webex.Application.ErrorCodes[error]);
       });
 
-      handleThemeChange(app.theme)
+    //   handleThemeChange(app.theme)
 
      app.listen()
      .then(() => {
@@ -100,10 +96,6 @@
  }).catch((errorcode) =>  {
      log("Error with code: ", Webex.Application.ErrorCodes[errorcode])
  });
-
-function showImage(src, div) {
-
-}
 
  function log(type, data) {
      let ul = document.getElementById("console");
