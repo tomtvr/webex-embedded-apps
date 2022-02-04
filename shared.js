@@ -27,6 +27,13 @@
     }
  }
 
+ function displayRole(m){
+     roles = m.userRoles;
+     if (roles.includes("PRESENTER")){
+        document.getElementById("role").textContent = "You have got this! Your presentation will be amazing";
+     }
+ }
+
  function greetUser(name){
     console.log("Greeting user: " + name)
     const currentDiv = document.getElementById("greeting").textContent = "Hello, " + name + "!\n";
@@ -73,6 +80,7 @@
      app.context.getMeeting().then((m) => {
         console.log('getMeeting()', m);
         displayMeetingTitle(m)
+        displayRole(m)
       }).catch((error) => {
         console.log('getMeeting() promise failed with error', Webex.Application.ErrorCodes[error]);
       });
