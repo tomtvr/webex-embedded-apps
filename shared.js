@@ -45,6 +45,8 @@
 
  function handleThemeChange(theme){
      console.log("current theme: " + theme)
+     let type = typeof(theme)
+     console.log("Type is: " + type)
      const currentDiv = document.getElementById("theme").textContent = "Theme: " + theme + "\n";
      linebreak = document.createElement("br");
      let img = document.createElement("img");
