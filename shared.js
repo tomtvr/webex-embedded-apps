@@ -27,7 +27,8 @@
     console.log("Greeting user: " + user.displayName)
     const currentDiv = document.getElementById("div1").textContent = "Hello, " + user.displayName + "!";
     let img = document.createElement("img");
-    img.src = 'wave.jpg'
+    img.src = './wave.png'
+    img.width = 50
     document.getElementById("div1").appendChild(img);
  }
 
