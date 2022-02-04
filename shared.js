@@ -6,15 +6,15 @@
     // add the newly created element and its content into the DOM
     // const currentDiv = document.getElementById("div1").textContent = "TEST";
     if (document.body.style.backgroundColor != "red") {
-        document.body.style.backgroundColor = "red" 
+        document.body.style.backgroundColor = "red"
     } else {
-        document.body.style.backgroundColor = "white" 
+        document.body.style.backgroundColor = "white"
     }
  }
 
  function handleRoleChange(event) {
-    console.log("Start of handleRoleChange")  
-    // add the newly created element and its content into the DOM   
+    console.log("Start of handleRoleChange")
+    // add the newly created element and its content into the DOM
     console.log("User Roles:" + event.userRoles)
     if (event.userRoles === "PRESENTER") {
         document.getElementById("div1").textContent = "You have got this! Your presentation will be amazing";
@@ -28,7 +28,6 @@
     const currentDiv = document.getElementById("div1").textContent = "Hello, " + user.displayName + "!";
     let img = document.createElement("img");
     img.src = 'wave.jpg'
-    document.body.appendChild(p);
     document.getElementById("div1").appendChild(img);
  }
 
