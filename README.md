@@ -27,6 +27,14 @@ Click on Apps in the bottom right hand corner. Your app should appear as an opti
 Once the shared url is set, you can click on Open Together, which will then share the app with your friends in the meeting. 
 
 ## Example Code
-The code we have provide should show some example APIs that are available within the Webex Embedded App framework.
+The code provided shows some example APIs that are available within the Webex Embedded App framework.
 
-It sets a selection of app listeners and responds with some interesting UI changes.
+There are 4 main files:
+* index.html
+* index.js
+* shared.html
+* shared.js
+
+The index.html file contains the initiator page for the app. This will be shown to the user who starts the embedded app. The index.js contains functions to be able to set the shared url  within the Webex embedded app.
+
+The shared.html file is the file that is shared with all participants in the meeting. The shared.js file has some examples of using the event listeners and also getting user information.
