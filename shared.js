@@ -43,6 +43,16 @@
 
  function handleThemeChange(theme){
      console.log("current theme: " + theme)
+     const currentDiv = document.getElementById("theme").textContent = "Theme: " + theme + "\n";
+     let img = document.createElement("img");
+     if (theme === "DARK") {
+        img.src = './dark.jpg'
+     }
+     else {
+        img.src = './light.jpg'
+     }
+     img.width = 150
+     document.getElementById("theme").appendChild(img);
  }
 
  // Wait for onReady promise, handle error scenario
@@ -70,7 +80,7 @@
       app.on("meeting:roleChanged", (event) => {
         handleRoleChange(event);
       })
-      app.on("application:themeChanged", (event) => {
+      app.on("application:themeChanged", (theme) => {
         handleThemeChange(theme);
       })
      }).catch((err)=>{
