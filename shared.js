@@ -28,6 +28,7 @@
  }
 
  function displayRole(m){
+     console.log("display role");
      roles = m.userRoles;
      if (roles.includes("PRESENTER")){
         document.getElementById("role").textContent = "You have got this! Your presentation will be amazing";
@@ -79,8 +80,8 @@
      })
      app.context.getMeeting().then((m) => {
         console.log('getMeeting()', m);
-        displayMeetingTitle(m)
-        displayRole(m)
+        displayMeetingTitle(m);
+        displayRole(m);
       }).catch((error) => {
         console.log('getMeeting() promise failed with error', Webex.Application.ErrorCodes[error]);
       });
