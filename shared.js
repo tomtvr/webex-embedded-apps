@@ -47,19 +47,19 @@
         console.log('getMeeting() promise failed with error', Webex.Application.ErrorCodes[error]);
       });
 
-    //  app.listen()
-    //  .then(() => {
-    //   console.log("Hit this code! Wooo!")
-    //   app.on("application:displayContextChanged", (event) => {
-    //     handleDisplayContextChange(event);
-    //   })
-    //   app.on("meeting:roleChanged", (event) => {
-    //     handleRoleChange(event);
-    //   })
-    //  }).catch((err)=>{
-    //     console.log("Error in listen")
-    //     console.log(err);
-    //  });
+     app.listen()
+     .then(() => {
+      console.log("Hit this code! Wooo!")
+      app.on("application:displayContextChanged", (event) => {
+        handleDisplayContextChange(event);
+      })
+      app.on("meeting:roleChanged", (event) => {
+        handleRoleChange(event);
+      })
+     }).catch((err)=>{
+        console.log("Error in listen")
+        console.log(err);
+     });
 
  }).catch((errorcode) =>  {
      log("Error with code: ", Webex.Application.ErrorCodes[errorcode])
