@@ -16,7 +16,7 @@
     console.log("Start of handleRoleChange")
     // add the newly created element and its content into the DOM
     console.log("User Roles:" + event)
-    let check = event === "PRESENTER"
+    let check = event == "PRESENTER"
     console.log("Check: " + check)
     let type = typeof(event)
     console.log("Type is: " + type)
@@ -36,6 +36,11 @@
     document.getElementById("greeting").appendChild(img);
  }
 
+ function displayStartTime(meeting){
+     console.log("Start time: " + meeting.startTime)
+     const currentDiv = document.getElementById("greeting").textContent = "Your meeting started at " + meeting.startTime + "\n";
+ }
+
  // Wait for onReady promise, handle error scenario
  app.onReady().then(() => {
      //log("Application ready. App", app);
@@ -47,6 +52,7 @@
      })
      app.context.getMeeting().then((m) => {
         console.log('getMeeting()', m);
+        displayStartTime(m)
       }).catch((error) => {
         console.log('getMeeting() promise failed with error', Webex.Application.ErrorCodes[error]);
       });
