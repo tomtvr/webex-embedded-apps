@@ -38,7 +38,7 @@
 
  function displayMeetingTitle(m){
      console.log("Title: "+ m.title)
-     const currentDiv = document.getElementById("meeting").textContent = "You are in: " + meeting.title + "\n";
+     const currentDiv = document.getElementById("meeting").textContent = "You are in: " + m.title + "\n";
  }
 
  function handleThemeChange(theme){
