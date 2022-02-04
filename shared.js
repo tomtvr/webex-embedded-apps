@@ -28,10 +28,13 @@
  }
 
  function displayRole(m){
-     console.log("display role");
+     console.log("display role: " + m.userRoles);
      roles = m.userRoles;
      if (roles.includes("PRESENTER")){
         document.getElementById("role").textContent = "You have got this! Your presentation will be amazing";
+     }
+     if (roles.includes("PARTICIPANT")){
+        document.getElementById("role").textContent = "You are a participant";
      }
  }
 
