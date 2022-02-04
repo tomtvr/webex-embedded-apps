@@ -32,7 +32,7 @@
     const currentDiv = document.getElementById("greeting").textContent = "Hello, " + name + "!\n";
     let img = document.createElement("img");
     img.src = './wave.gif'
-    img.width = 50
+    img.width = 150
     document.getElementById("greeting").appendChild(img);
  }
 
@@ -44,6 +44,7 @@
  function handleThemeChange(theme){
      console.log("current theme: " + theme)
      const currentDiv = document.getElementById("theme").textContent = "Theme: " + theme + "\n";
+     linebreak = document.createElement("br");
      let img = document.createElement("img");
      if (theme === "DARK") {
         img.src = './dark.jpg'
@@ -52,6 +53,7 @@
         img.src = './light.jpg'
      }
      img.width = 150
+     document.getElementById("theme").appendChild(linebreak);
      document.getElementById("theme").appendChild(img);
  }
 
@@ -70,6 +72,8 @@
       }).catch((error) => {
         console.log('getMeeting() promise failed with error', Webex.Application.ErrorCodes[error]);
       });
+
+      handleThemeChange(app.theme)
 
      app.listen()
      .then(() => {
