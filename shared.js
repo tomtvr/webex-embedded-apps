@@ -1,16 +1,21 @@
  var app = new window.Webex.Application();
 
  function handleDisplayContextChange(event) {
-    console.log("Start of handleDisplayContextChange")  
+    console.log("Start of handleDisplayContextChange")
     // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById("div1").textContent = "TEST";
     document.body.style.backgroundColor = "red"
  }
 
  function handleRoleChange(event) {
-    console.log("Start of handleRoleChange")  
+    console.log("Start of handleRoleChange")
     // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById("div1").textContent = "BOB";
+ }
+
+ function greetUser(user){
+    console.log("Greeting user: " + user.displayName)
+    const currentDiv = document.getElementById("div1").textContent = "Hello " + user.displayName + "!";
  }
 
  // Wait for onReady promise, handle error scenario
@@ -18,7 +23,7 @@
      log("Application ready. App", app);
      // Display the ID of the current user
      app.context.getUser().then((user)=> {
-         log("User Name", user.displayName)
+         greetUser(user)
      }).catch((errorcode) => {
          log("Error", errorcode)
      })
