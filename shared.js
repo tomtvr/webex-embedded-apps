@@ -36,9 +36,13 @@
     document.getElementById("greeting").appendChild(img);
  }
 
- function displayStartTime(meeting){
-     console.log("Start time: " + meeting.startTime)
-     const currentDiv = document.getElementById("greeting").textContent = "Your meeting started at " + meeting.startTime + "\n";
+ function displayMeetingTitle(m){
+     console.log("Title: "+ m.title)
+     const currentDiv = document.getElementById("meeting").textContent = "You are in: " + meeting.title + "\n";
+ }
+
+ function handleThemeChange(theme){
+     console.log("current theme: " + theme)
  }
 
  // Wait for onReady promise, handle error scenario
@@ -52,7 +56,7 @@
      })
      app.context.getMeeting().then((m) => {
         console.log('getMeeting()', m);
-        displayStartTime(m)
+        displayMeetingTitle(m)
       }).catch((error) => {
         console.log('getMeeting() promise failed with error', Webex.Application.ErrorCodes[error]);
       });
@@ -65,6 +69,9 @@
       })
       app.on("meeting:roleChanged", (event) => {
         handleRoleChange(event);
+      })
+      app.on("application:themeChanged", (event) => {
+        handleThemeChange(theme);
       })
      }).catch((err)=>{
         console.log("Error in listen")
