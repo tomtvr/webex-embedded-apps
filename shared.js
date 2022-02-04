@@ -30,9 +30,11 @@
  function greetUser(name){
     console.log("Greeting user: " + name)
     const currentDiv = document.getElementById("greeting").textContent = "Hello, " + name + "!\n";
+    linebreak = document.createElement("br");
     let img = document.createElement("img");
     img.src = './wave.gif'
     img.width = 150
+    document.getElementById("greeting").appendChild(linebreak);
     document.getElementById("greeting").appendChild(img);
  }
 
