@@ -2,7 +2,7 @@
 
  function handleDisplayContextChange(event) {
     console.log("Start of handleDisplayContextChange")
-    console.log("Display Context: " + event.displayContext)
+    console.log("Display Context: " + event)
     // add the newly created element and its content into the DOM
     // const currentDiv = document.getElementById("div1").textContent = "TEST";
     if (document.body.style.backgroundColor != "red") {
@@ -15,8 +15,8 @@
  function handleRoleChange(event) {
     console.log("Start of handleRoleChange")
     // add the newly created element and its content into the DOM
-    console.log("User Roles:" + event.userRoles)
-    if (event.userRoles === "PRESENTER") {
+    console.log("User Roles:" + event)
+    if (event === "PRESENTER") {
         document.getElementById("div1").textContent = "You have got this! Your presentation will be amazing";
     } else {
         document.getElementById("div1").textContent = ""
